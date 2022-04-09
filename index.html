@@ -1,0 +1,84 @@
+<DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<title> Carregando aprendizado </title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container-barra-progress">
+<style type="text/css">
+.container-barra-progress {
+	width: 500px;
+	border-radius: 10x;
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+	box-shadow: 0 10px 18px #808080;
+}
+</style>
+    <div class="barra-progress-vazia">
+	<style type="text/css">
+.barra-progress-vazia {
+	width: 78%;
+	height: 12px;
+	margin: auto;
+	display: flex;
+	background: beige;
+	border-radius: 18px;
+	display: flex;
+	align-items: center;
+}
+</style>
+	     <div class="barra-progress">
+	     <style type="text/css">
+.barra-progress {
+	width: 50%;
+	height: 10px;
+	border-radius: 14px;
+	background: aqua;
+	transition: width 0.5s;
+}
+</style>
+		 </div>
+	</div>
+    <div class="porcentagem-barra-progress">
+	<style type="text/css">
+.porcentagem-barra-progress {
+	margin-left: auto;
+	width: 60px;
+	height: 60px;
+	background: aliceblue;
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 8px;
+	font-family: cursive;
+}
+
+</style>
+		 </div>
+<script type ="text/javascript"> var barraProgress = new Object();
+        barraProgress.porcentagem = 20;
+		
+		barraProgress.carregaBarra = function () {
+			if (barraProgress.porcentagem > 100)
+				barraProgress.porcentagem = 0;
+$ (".barra-progress").css("width", barraProgress.porcentagem + "%");
+	
+$ (".porcentagem-barra-progress").html(barraProgress.porcentagem + "%");
+		}
+		
+		barraProgress.porcentagem + =5;
+		setTimeout(barraProgress.carregaBarra, 500);
+		
+$(function (){
+			barraProgress.carregaBarra();
+		})
+</script>
+</style>
+
+    </div>
+</div>
+	</body>
